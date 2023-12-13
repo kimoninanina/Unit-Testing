@@ -1,4 +1,8 @@
 import type { Config } from '@jest/types'
+//base directory
+const baseDir = '<rootDir>/src/app/pass_checker'
+//base Test directory
+const baseTestDir = '<rootDir>/src/test/pass_checker'
 
 const config: Config.InitialOptions = {
     preset: 'ts-jest',
@@ -6,7 +10,10 @@ const config: Config.InitialOptions = {
     verbose: true,
     collectCoverage: true,
     collectCoverageFrom: [
-        '<rootDir>/src/app/**/*.ts'
+        `${baseDir}/**/*.ts`
+    ],
+    testMatch:[
+        `${baseTestDir}/**/*.ts`
     ]
 }
 
